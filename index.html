@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Verification</title>
+    <meta property="og:title" content="" id="ogTitle">
+    <meta property="og:description" content="" id="ogDescription">
+    <meta property="og:image" content="" id="ogImage">
+    <meta property="og:url" content="" id="ogUrl">
+    <link rel="stylesheet" href="resources/styles.css">
+    <script src="resources/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Human Verification</h1>
+        <p>Please verify you are not a robot. Redirecting in <span id="countdown">3</span> seconds...</p>
+    </div>
+
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let countdown = 3;
+
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+                redirectToLink();
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

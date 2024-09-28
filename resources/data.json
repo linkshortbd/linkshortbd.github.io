@@ -1,0 +1,16 @@
+{
+    "asjdh645": {
+        "ogImage": "https://example.com/image.jpg",
+        "description": "This is a description for the link.",
+        "ogUrl": "https://example.com/full-link",
+        "ogTitle": "Full Link Title",
+        "redirectLink": "https://example.com/redirect-page"
+    },
+    "anotherCode": {
+        "ogImage": "https://example.com/another-image.jpg",
+        "description": "Another link description.",
+        "ogUrl": "https://example.com/another-full-link",
+        "ogTitle": "Another Link Title",
+        "redirectLink": "https://example.com/another-redirect-page"
+    }
+}
