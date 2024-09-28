@@ -30,7 +30,6 @@ function redirectToLink() {
                 console.error('Error fetching the JSON file:', error);
             });
     } else {
-        alert('Missing or invalid data parameter');
     }
 }
 
