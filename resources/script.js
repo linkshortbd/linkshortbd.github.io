@@ -2,7 +2,7 @@
 function redirectToLink() {
     // Get the `data` parameter from the query string
     const urlParams = new URLSearchParams(window.location.search);
-    const urlCode = urlParams.get('data');  // e.g., asjdh645
+    const urlCode = urlParams.get('page');  // e.g., asjdh645
 
     if (urlCode) {
         // Fetch the JSON data
