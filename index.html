@@ -8,25 +8,39 @@
     <meta property="og:description" content="Verify you are not a robot" id="ogDescription">
     <meta property="og:image" content="https://i.ibb.co.com/nDh9bvR/image.png" id="ogImage">
     <meta property="og:url" content="https://linkshortbd.github.io" id="ogUrl">
-    <link rel="stylesheet" href="resources/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="resources/script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <h1>Human Verification</h1>
-        <p>Please verify you are not a robot. Redirecting in <span id="countdown">3</span> seconds...</p>
+        <p>Verifing you are not a robot. Redirecting shortly...</p>
+        <i class="fas fa-sync-alt reload-icon" id="reloadIcon"></i>
     </div>
 
     <script>
-        let countdownElement = document.getElementById('countdown');
-        let countdown = 3;
+        let countdown = 2;
+        let reloadIcon = document.getElementById('reloadIcon');
+        reloadIcon.style.display = 'inline-block';  // Show the reload icon immediately
 
         const countdownInterval = setInterval(() => {
             countdown--;
-            countdownElement.textContent = countdown;
             if (countdown === 0) {
                 clearInterval(countdownInterval);
-                redirectToLink();
+
+                // Show success alert for verification
+                Swal.fire({
+                    title: 'Verification Successful!',
+                    text: 'You will be redirected now.',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                    willClose: () => {
+                        
+                    }
+                });
             }
         }, 1000);
     </script>
