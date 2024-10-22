@@ -7,7 +7,12 @@ function redirectToLink() {
     if (urlCode) {
         // Fetch the JSON data
         fetch('resources/data.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 const linkData = data[urlCode];  // Get the specific link data using the URL code
 
@@ -28,10 +33,12 @@ function redirectToLink() {
             })
             .catch(error => {
                 console.error('Error fetching the JSON file:', error);
+                alert('Failed to fetch data. Please try again later.');
             });
     } else {
+        alert('No page parameter found in the URL.');
     }
 }
 
 // Call the function after page loads
-redirectToLink();
+window.onload = redirectToLink;
